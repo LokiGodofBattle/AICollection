@@ -3,6 +3,7 @@ package de.loki.aicollection;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 
@@ -14,6 +15,7 @@ public class Main extends Game {
 	public static float VIEWPORT_HEIGHT;
 	public static float scale;
 	private static float aspect_ratio;
+	public ShapeRenderer shapeRenderer;
 
 	@Override
 	public void create () {
@@ -34,6 +36,9 @@ public class Main extends Game {
 
 		scale = VIEWPORT_WIDTH/Gdx.graphics.getWidth();
 
+		shapeRenderer = new ShapeRenderer();
+
+		this.screen = new SimulationScreen(this);
 	}
 
 	@Override
